@@ -20,9 +20,9 @@ def build(meta, test=True):
         meta.check_fields()
         if os.path.exists(conda_build.config.config.info_dir):
             shutil.rmtree(conda_build.config.config.info_dir)
-        build_module.build(meta, verbose=False, post=None)
+        build_module.build(meta, post=None)
         if test:
-            build_module.test(meta, verbose=False)
+            build_module.test(meta)
         return meta
 
 
